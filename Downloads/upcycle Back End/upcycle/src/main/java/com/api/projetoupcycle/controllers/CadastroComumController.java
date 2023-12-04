@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/usuarios")
 public class CadastroComumController {
 
@@ -95,7 +96,7 @@ public class CadastroComumController {
         boolean credenciaisValidas = cadastroComumService.verificarCredenciais(cpf, senha);
 
         if (credenciaisValidas){
-            return ResponseEntity.ok().build(); //HTTP 204 No Content, que indica sucesso sem conteúdo no corpo da resposta.
+            return ResponseEntity.ok().build();
         } else {
             return  ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas.");
         }

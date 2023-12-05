@@ -35,7 +35,7 @@ public class UsuarioFerrovelhoService {
         try {
             return usuarioFerrovelhoRepository.save(usuarioFerrovelho);
         } catch (DataIntegrityViolationException e) {
-            throw new RuntimeException("Erro ao criar usuário. O CNPJ já cadastrado.", e);
+            throw new RuntimeException("Erro ao criar usuário. CNPJ já cadastrado.", e);
         }
     }
 

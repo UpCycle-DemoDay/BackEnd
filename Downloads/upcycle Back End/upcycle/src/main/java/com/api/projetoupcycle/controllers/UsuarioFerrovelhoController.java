@@ -29,7 +29,7 @@ public class UsuarioFerrovelhoController {
     }
 
     //OK
-    @GetMapping("/especifico/{idFerrovelho}")
+    @GetMapping("/{idFerrovelho}")
     public ResponseEntity<?> getFerrovelhoById(@PathVariable Long idFerrovelho){
         UsuarioFerrovelho umUsuarioFerrovelho = usuarioFerrovelhoService.getFerrovelhoById(idFerrovelho);
         if (umUsuarioFerrovelho != null){

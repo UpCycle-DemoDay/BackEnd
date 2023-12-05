@@ -11,9 +11,10 @@ import java.util.Optional;
 @Repository
 
 public interface CadastroComumRepository extends JpaRepository<CadastroComumModel, Long> {
-    boolean existsByCpfComum(String cpf);
+    boolean existsByEmailComum(String emailComum);
 
-    Optional<CadastroComumModel> findOneByCpfComumAndSenhaComum(String cpf, String senhaComum); //CadastroComum
+    Optional<CadastroComumModel> findOneByEmailComumAndSenhaComum(String emailComum, String senhaComum); //CadastroComum
 
-    CadastroComumModel findByCpfComum(String cpf);
+    CadastroComumModel findByEmailComum(String emailComum);
+
 }

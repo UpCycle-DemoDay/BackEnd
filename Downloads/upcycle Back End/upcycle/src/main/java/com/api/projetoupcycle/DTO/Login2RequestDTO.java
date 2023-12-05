@@ -2,23 +2,23 @@ package com.api.projetoupcycle.DTO;
 
 public class Login2RequestDTO {
 
-    private String cpf;
+    private String email;
     private String senha;
-
-    public Login2RequestDTO(String cpf, String senha) {
-        this.cpf = cpf;
-        this.senha = senha;
-    }
 
     public Login2RequestDTO() {
     }
 
-    public String getCpf() {
-        return cpf;
+    public Login2RequestDTO(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
@@ -28,4 +28,5 @@ public class Login2RequestDTO {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
 }

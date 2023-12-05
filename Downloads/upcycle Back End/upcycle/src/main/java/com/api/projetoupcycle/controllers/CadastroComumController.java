@@ -41,7 +41,6 @@ public class CadastroComumController {
         }
     }
 
-
     //TESTE OK
     @PostMapping("/cadastro")
     public ResponseEntity<?> novoCadastroComum(@Validated @RequestBody CadastroComumModel cadastroComumModel){
@@ -90,10 +89,10 @@ public class CadastroComumController {
     // TESTE OK
    @PostMapping("/login")
     public ResponseEntity<?> verificarCredenciais(@RequestBody Login2RequestDTO loginRequestDTO){
-        String cpf = loginRequestDTO.getCpf();
+        String emailComum = loginRequestDTO.getEmail();
         String senha = loginRequestDTO.getSenha();
 
-        boolean credenciaisValidas = cadastroComumService.verificarCredenciais(cpf, senha);
+        boolean credenciaisValidas = cadastroComumService.verificarCredenciais(emailComum, senha);
 
         if (credenciaisValidas){
             return ResponseEntity.ok().build();

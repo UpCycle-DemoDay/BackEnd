@@ -41,8 +41,8 @@ public class CadastroComumService {
     }
 
     private void verificarDuplicidade(@NotNull CadastroComumModel cadastroComumModel) {
-        if (cadastroComumRepository.findByCpfComum(cadastroComumModel.getCpfComum()) != null) {
-            throw new RuntimeException("CPF já cadastrado.");
+        if (cadastroComumRepository.findByEmailComum(cadastroComumModel.getEmailComum()) != null) {
+            throw new RuntimeException("E-mail já cadastrado.");
         }
     }
 
@@ -81,15 +81,15 @@ public class CadastroComumService {
     }
 
     //Verificar
-    public boolean verificarCpf(String cpf){
-        CadastroComumModel usuario = cadastroComumRepository.findByCpfComum(cpf);
+    public boolean verificarEmail(String emailComum){
+        CadastroComumModel usuario = cadastroComumRepository.findByEmailComum(emailComum);
         return usuario != null;
     }
 
-    public boolean verificarCredenciais(String cpf, String senha){
-        boolean cpfEmUso =  verificarCpf(cpf);
-        if (cpfEmUso){
-            CadastroComumModel usuario = cadastroComumRepository.findByCpfComum(cpf);
+    public boolean verificarCredenciais(String emailComum, String senha){
+        boolean emailEmUso =  verificarEmail(emailComum);
+        if (emailEmUso){
+            CadastroComumModel usuario = cadastroComumRepository.findByEmailComum(emailComum);
             if (senha.equals(usuario.getSenhaComum())){
                 return true;
             }

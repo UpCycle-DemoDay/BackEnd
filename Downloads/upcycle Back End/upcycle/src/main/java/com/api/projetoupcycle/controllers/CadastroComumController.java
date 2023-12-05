@@ -30,7 +30,7 @@ public class CadastroComumController {
     }
 
     //TESTE OK
-    @GetMapping("/cliente-especifico/{idClienteComum}")
+    @GetMapping("/usuario/{idClienteComum}")
     public ResponseEntity<Object> getClienteComumById(@PathVariable Long idClienteComum){
         CadastroComumModel cadastroComumModel = cadastroComumService.getClienteComumById(idClienteComum);
 
@@ -43,7 +43,7 @@ public class CadastroComumController {
 
 
     //TESTE OK
-    @PostMapping("/cadastrar")
+    @PostMapping("/cadastro")
     public ResponseEntity<?> novoCadastroComum(@Validated @RequestBody CadastroComumModel cadastroComumModel){
         try {
          CadastroComumModel novoUsuario = cadastroComumService.createCadastroComum(cadastroComumModel);

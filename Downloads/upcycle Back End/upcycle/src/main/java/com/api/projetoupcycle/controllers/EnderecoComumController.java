@@ -39,9 +39,8 @@ public class EnderecoComumController {
         }
     }
 
-
     //TESTE OK
-    @PostMapping("/cadastrar") //cd ok
+    @PostMapping("/cadastro") //cd ok
     public ResponseEntity<?> createEnderecoComum (@RequestBody EnderecoComumModel enderecoComumModel){
         try {
             EnderecoComumModel novoEndereco = enderecoComumService.createEnderecoComum(enderecoComumModel);
